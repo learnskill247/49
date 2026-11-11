@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Product Selling | Class 9–12 Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F7FA;--card:#fff;--ink:#12203A;--mute:#5A6782;--line:#DDE3EE;--blue:#1F4FE0;--blue-d:#173DB4;--yel:#FFD23F;--red:#FF3B30;--wa:#1FA855}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Hind','Noto Sans Devanagari',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.2;margin:0}
+a{color:inherit}
+.btn{display:inline-block;padding:14px 26px;border-radius:12px;font-weight:700;font-size:17px;text-decoration:none;border:2px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer;font-family:inherit;transition:background .15s;text-align:center}
+.btn:hover{background:var(--blue-d)}
+.btn.ghost{background:transparent;color:var(--blue)}
+.btn.ghost:hover{background:#E8EEFF}
+.btn.wa{background:var(--wa);border-color:var(--wa)}
+.btn.wa:hover{background:#17893F}
+:focus-visible{outline:3px solid var(--yel);outline-offset:2px}
+
+/* top bar */
+.bar{background:var(--ink);padding:12px 0}
+.bar .wrap{display:flex;justify-content:flex-end}
+.lang{display:inline-flex;border:1px solid #3A4A6B;border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:#C4CEE3;font:600 15px 'Hind',sans-serif;padding:6px 18px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--yel);color:var(--ink)}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;padding:56px 0 72px}
+.hero .wrap{display:grid;gap:40px;grid-template-columns:1fr 1fr;align-items:center}
+.tag{display:inline-block;background:var(--yel);color:var(--ink);font-weight:700;padding:4px 14px;border-radius:999px;font-size:15px;margin-bottom:16px}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:700}
+.hero p{color:#C4CEE3;margin:14px 0 0;font-size:18px}
+.vid{position:relative;display:block;aspect-ratio:16/10;border-radius:18px;background:linear-gradient(135deg,#1F4FE0,#12307F);text-decoration:none;color:#fff;overflow:hidden;box-shadow:0 0 0 0 rgba(255,210,63,.7);animation:ring 1.6s infinite}
+.vid::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 14px,transparent 14px 28px)}
+.play{position:absolute;left:50%;top:44%;width:88px;height:88px;margin:-44px 0 0 -44px;border-radius:50%;background:var(--yel);animation:beat 1.2s infinite}
+.play::after{content:'';position:absolute;left:36px;top:26px;border-left:30px solid var(--ink);border-top:18px solid transparent;border-bottom:18px solid transparent}
+.vlabel{position:absolute;left:0;right:0;bottom:0;padding:14px;background:rgba(10,20,40,.55);text-align:center;font-weight:700;font-size:20px;animation:blink 1s steps(2,start) infinite}
+.live{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;font-weight:700;font-size:14px;padding:3px 12px;border-radius:6px;animation:blink 1s steps(2,start) infinite}
+@keyframes ring{70%{box-shadow:0 0 0 22px rgba(255,210,63,0)}100%{box-shadow:0 0 0 0 rgba(255,210,63,0)}}
+@keyframes beat{50%{transform:scale(1.14)}}
+@keyframes blink{50%{opacity:.35}}
+.hero .btn{margin-top:22px;background:var(--yel);border-color:var(--yel);color:var(--ink);font-size:19px;padding:15px 30px;animation:beat 1.2s infinite}
+.hero .btn:hover{background:#F2C21F}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}}
+
+section{padding:56px 0}
+.sh{font-size:clamp(26px,4vw,34px);font-weight:700}
+.sub{color:var(--mute);margin:6px 0 28px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.course{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.course h3{font-size:20px}
+.course p{margin:0;color:var(--mute);font-size:16px;flex:1}
+.course .len{font-weight:600;color:var(--blue);font-size:15px}
+.course .btn{padding:11px 18px;font-size:16px}
+
+.product{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.box{display:grid;gap:28px;grid-template-columns:1.2fr 1fr;align-items:center;background:var(--bg);border:2px solid var(--ink);border-radius:18px;padding:32px}
+.box ul{padding-left:20px;margin:14px 0 0;color:var(--mute)}
+.price{background:var(--card);border-radius:14px;padding:24px;text-align:center;border:1px solid var(--line)}
+.price .old{color:var(--mute);font-size:15px}
+.price .amt{font-size:52px;font-weight:700;line-height:1.1}
+.price .amt span{background:linear-gradient(transparent 62%,var(--yel) 62%)}
+.price .btn{display:block;margin-top:16px}
+.price .btn+.btn{margin-top:10px}
+@media(max-width:700px){.box{grid-template-columns:1fr;padding:22px}}
+.free{text-align:center}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 20px}
+summary{cursor:pointer;font-weight:600;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-size:24px;line-height:1;color:var(--blue)}
+details[open] summary::after{content:'−'}
+details p{margin:0 0 16px;color:var(--mute)}
+
+.contact{background:var(--ink);color:#fff;text-align:center}
+.contact p{color:#C4CEE3;margin:8px 0 22px}
+.num{font-size:22px;font-weight:700;margin-bottom:20px}
+footer{background:#0C1628;color:#8C9AB8;text-align:center;padding:18px;font-size:14px}
+
+dialog{border:0;border-radius:18px;padding:0;width:min(520px,calc(100% - 28px));max-height:calc(100% - 28px);color:var(--ink);box-shadow:0 20px 60px rgba(10,20,40,.35)}
+dialog::backdrop{background:rgba(10,20,40,.6)}
+.d-in{padding:26px}
+.d-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.d-head h3{font-size:22px}
+.x{background:none;border:0;font-size:30px;line-height:1;cursor:pointer;color:var(--mute);padding:0 4px}
+.chip{display:inline-block;font-weight:700;font-size:14px;padding:2px 12px;border-radius:999px;margin:14px 0 6px}
+.chip.f{background:#DDF5E5;color:#0F6B30}
+.chip.p{background:#FFF0B8;color:#6B5200}
+.lk{display:block;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:8px;font-weight:600}
+.lk:hover{border-color:var(--blue);background:#F0F4FF}
+.lk small{display:block;font-weight:400;color:var(--mute);font-size:14px}
+.lk.soon{opacity:.55;pointer-events:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="tag" data-i="tag"></span>
+    <h1 data-i="h1"></h1>
+    <p data-i="hp"></p>
+    <a class="btn" data-i="cta" href="https://drive.google.com/drive/folders/1w1u59l2ikAM96C4Qs28oFEsPU-3OSIEM?usp=sharing" target="_blank" rel="noopener"></a>
+  </div>
+  <a class="vid" href="https://drive.google.com/drive/folders/1w1u59l2ikAM96C4Qs28oFEsPU-3OSIEM?usp=sharing" target="_blank" rel="noopener" aria-label="Click on this video">
+    <span class="live" data-i="start"></span>
+    <span class="play"></span>
+    <span class="vlabel" data-i="cta"></span>
+  </a>
+</div></header>
+
+<section><div class="wrap">
+  <h2 class="sh" data-i="c_h"></h2>
+  <p class="sub" data-i="c_s"></p>
+  <div class="grid">
+    <article class="course"><span class="len" data-i="c1k"></span><h3 data-i="c1t"></h3><p data-i="c1d"></p>
+      <a class="btn" data-i="yt" href="https://youtu.be/7k8F0vXFBTQ" target="_blank" rel="noopener"></a></article>
+    <article class="course"><span class="len" data-i="c2k"></span><h3 data-i="c2t"></h3><p data-i="c2d"></p>
+      <a class="btn" data-i="yt" href="https://youtu.be/25GhLUO7_y8?si=e0SKFtG0ImIGN6lm" target="_blank" rel="noopener"></a></article>
+    <article class="course"><span class="len" data-i="c3k"></span><h3 data-i="c3t"></h3><p data-i="c3d"></p>
+      <a class="btn" data-i="yt" href="https://youtu.be/FWG6tsBfAAs?si=7l2sqEP7DvXlc2Ut" target="_blank" rel="noopener"></a></article>
+  </div>
+</div></section>
+
+<section class="product"><div class="wrap">
+  <h2 class="sh" data-i="p_h"></h2>
+  <p class="sub" data-i="p_s"></p>
+  <div class="box">
+    <div>
+      <h3 style="font-size:26px" data-i="p_t"></h3>
+      <ul><li data-i="p1"></li><li data-i="p2"></li><li data-i="p3"></li></ul>
+    </div>
+    <div class="price">
+      <div class="old" data-i="p_o"></div>
+      <div class="amt"><span>₹499</span></div>
+      <a class="btn" data-i="buy" href="https://superprofile.bio/vp/your-payment-page-title-here-176-783" target="_blank" rel="noopener"></a>
+      <a class="btn ghost" data-i="demo" href="https://drive.google.com/drive/folders/1ZXAOl7JMJxtdLm5gwWrQOEXNolOIPJVq?usp=sharing" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+</div></section>
+
+<section class="free"><div class="wrap">
+  <h2 class="sh" data-i="f_h"></h2>
+  <p class="sub" data-i="f_s"></p>
+  <button class="btn" id="openD" type="button" data-i="f_b"></button>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 class="sh" style="margin-bottom:22px" data-i="faq_h"></h2>
+  <details><summary data-i="q1"></summary><p data-i="a1"></p></details>
+  <details><summary data-i="q2"></summary><p data-i="a2"></p></details>
+  <details><summary data-i="q3"></summary><p data-i="a3"></p></details>
+  <details><summary data-i="q4"></summary><p data-i="a4"></p></details>
+  <details><summary data-i="q5"></summary><p data-i="a5"></p></details>
+  <details><summary data-i="q6"></summary><p data-i="a6"></p></details>
+  <details><summary data-i="q7"></summary><p data-i="a7"></p></details>
+  <details><summary data-i="q8"></summary><p data-i="a8"></p></details>
+  <details><summary data-i="q9"></summary><p data-i="a9"></p></details>
+  <details><summary data-i="q10"></summary><p data-i="a10"></p></details>
+</div></section>
+
+<section class="contact"><div class="wrap">
+  <h2 class="sh" data-i="w_h"></h2>
+  <p data-i="w_s"></p>
+  <div class="num"><span data-i="w_c"></span> +91 62003 27181</div>
+  <a class="btn wa" data-i="w_b" href="https://wa.me/916200327181" target="_blank" rel="noopener"></a>
+</div></section>
+<footer>© 2026</footer>
+
+<dialog id="d" aria-labelledby="dt"><div class="d-in">
+  <div class="d-head"><h3 id="dt" data-i="d_h"></h3><button class="x" type="button" id="closeD" aria-label="Close">×</button></div>
+  <span class="chip f">FREE</span>
+  <!-- TODO: href="#" ki jagah apna link paste karo -->
+  <a class="lk soon" id="l1" href="#" target="_blank" rel="noopener"><span data-i="l1t"></span><small data-i="l1s"></small></a>
+  <a class="lk soon" id="l2" href="#" target="_blank" rel="noopener"><span data-i="l2t"></span><small data-i="l2s"></small></a>
+  <a class="lk soon" id="l3" href="#" target="_blank" rel="noopener"><span data-i="l3t"></span><small data-i="l3s"></small></a>
+  <span class="chip p">PAID</span>
+  <a class="lk" href="https://superprofile.bio/vp/your-payment-page-title-here-176-783" target="_blank" rel="noopener"><span data-i="l4t"></span><small data-i="l4s"></small></a>
+</div></dialog>
+
+<script>
+var T={
+en:{tag:"Learn for free",h1:"Learn to sell digital products, step by step",hp:"Watch this video first. It shows what I teach and how you can get started.",cta:"Click on this video",start:"Start here",
+c_h:"Free YouTube courses",c_s:"Watch these 3 videos to learn dropshipping and Facebook Ads.",yt:"Watch on YouTube",
+c1k:"Dropshipping and store setup",c1t:"Full Indian Drop Shipping Course (2026)",c1d:"The complete beginner course, start to finish.",
+c2k:"Meta Ads · Full detail",c2t:"Facebook Ads: long detailed video",c2d:"How to run Facebook Ads, every step in detail.",
+c3k:"Meta Ads · Short",c3t:"Facebook Ads: short, everything covered",c3d:"All the key points in less time.",
+p_h:"Want the same product I sold to teachers?",p_s:"Here it is. See the demo before you buy.",p_t:"Class 9 to 12 Notes",
+p1:"Complete study material for Class 9, 10, 11 and 12",p2:"Download right after payment",p3:"Check the demo before you purchase",p_o:"Class 9 to 12, all in one",buy:"Buy now",demo:"See demo notes first",
+f_h:"How you can make your own notes",f_s:"Learn to make your own notes. There is a free way too.",f_b:"Show me how",
+faq_h:"Frequently asked questions",
+q1:"Is it a good time to buy this digital product?",a1:"Yes! The new academic session is coming and teachers and coaching institutes are starting to prepare their crash courses. It is a good chance to start selling digital products.",
+q2:"Can I learn digital product selling like you?",a2:"Yes! If you have dedication, hard work and consistency, you can learn this skill and start your own digital product business.",
+q3:"Can I also sell Class 9 to 12 study material?",a3:"Yes! You can offer Class 9 to 12 study material to your potential customers.",
+q4:"Will I get the complete Class 9 to 12 study material?",a4:"Yes! As per the package, you get study material for Class 9 to 12 that you can use for learning and reselling.",
+q5:"Will teachers buy study material from us right now?",a5:"Yes! Many teachers and coaching institutes are preparing new batches and crash courses. They may need teaching PPTs, PDFs, objective questions and test series.",
+q6:"Do I need any prior experience?",a6:"No! Beginners can start too. You will be taught step by step how digital products are sold.",
+q7:"Is earning guaranteed?",a7:"Your earnings depend on your hard work, marketing, customer reach and selling skills.",
+q8:"What is the price of this whole digital product?",a8:"Just ₹49! That is the price of a plate of momos to start learning digital product selling.",
+q9:"Can I do this part-time?",a9:"Yes! You can sell digital products in your free time alongside your studies or another job.",
+q10:"Will I get guidance from you?",a10:"Yes! You will get starting guidance on digital product selling, finding customers, marketing and online business.",
+w_h:"Any query? Message on WhatsApp",w_s:"Ask directly on WhatsApp.",w_c:"Contact:",w_b:"Chat on WhatsApp",
+d_h:"How to make your own notes",l1t:"First link",l1s:"Open this first",l2t:"Second link: how you can edit",l2s:"How to edit the notes",l3t:"Free YouTube video for this",l3s:"Watch the full process in the video",l4t:"My digital product: Class 9 to 12 notes, ₹499",l4s:"Ready-made notes, direct download"}
+};
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-i]').forEach(function(e){e.textContent=T[l][e.dataset.i]});
+}
+setLang('en');
+var d=document.getElementById('d');
+document.getElementById('openD').onclick=function(){d.showModal()};
+document.getElementById('closeD').onclick=function(){d.close()};
+d.addEventListener('click',function(e){if(e.target===d)d.close()});
+['l1','l2','l3'].forEach(function(id){var a=document.getElementById(id);if(a.getAttribute('href')!=='#')a.classList.remove('soon')});
+</script>
+</body>
+</html>
